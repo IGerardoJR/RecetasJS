@@ -63,6 +63,23 @@ app.delete('/recetas:id',(req,res) => {
   });
 })
 
-
+// Agregamos una receta
+app.post('/recetas',(req,res) => {
+  const nuevaReceta = new EsquemaReceta({
+    titulo: req.body.titulo,
+    descripcion: req.body.descripcion,
+    nivel_dificultad: req.body.nivel_dificultad,
+    tiempo_preparacion: req.body.tiempo_preparacion,
+    tiempo_coccion: req.body.tiempo_coccion,
+    categoria: req.body.categoria,
+    ingredientes: req.body.ingredientes,
+  });
+  // Guardamos la receta
+  console.log(nuevaReceta);
+  nuevaReceta.save((error, receta) => {
+    if(error) { console.error(error); }
+    res.send(receta);
+  });
+});
 
 };
