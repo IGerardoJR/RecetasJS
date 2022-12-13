@@ -37,10 +37,8 @@ app.post('/recetas/calificar/:id',(req, res) => {
     receta_id: req.params.id,
     usuario_id: req.body.usuario_id,
     calificacion: req.body.calificacion,
-  }); 
-})
-
-// Guardamos la calificacion
+  });
+  // Guardamos la calificacion
 calif.save(function(erro, calificacion) {
   if(error) { console.log(error); }
   else {
@@ -50,5 +48,21 @@ calif.save(function(erro, calificacion) {
       calificacion: calif.calificacion,
     });
   }
+}); 
 });
+// Eliminar una receta
+app.delete('/recetas:id',(req,res) => {
+  EsquemaReceta.findByIdAndRemove(req.params.id, (error, receta) => {
+    if(error) { console.error(error); }
+    else {
+      res.send({
+        success: true,
+        message: 'Receta eliminada',
+      });
+    }
+  });
+})
+
+
+
 };

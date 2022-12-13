@@ -35,11 +35,11 @@
         required
         :rules="reglasCategoria">
       </v-select>
-      <v-select 
+      <v-text-field
       label="Ingredientes"
       v-model="ingredientes"
       :rules="reglasIngredientes"
-      required></v-select>
+      required></v-text-field>
       <v-btn @click="enviar" :disabled="!validado">
         Enviar
         </v-btn>
@@ -155,12 +155,12 @@ export default {
   }),
   methods: {
     enviar() {
-      if(this.$refs.form.validate()) {
+      if (this.$refs.form.validate()) {
         return axios({
           method: 'post',
           data: {
             titulo: this.titulo,
-            descripcion:this.descripcion,
+            descripcion: this.descripcion,
             nivel_dificultad: this.nivel_dificultad,
             tiempo_preparacion: this.tiempo_preparacion,
             tiempo_coccion: this.tiempo_coccion,
@@ -171,28 +171,28 @@ export default {
             'Content-Type': 'application/json',
           },
         })
-        .then(() => {
-          this.$swal(
-            'Exito',
-            'La recete ha sido agregada correctamente!',
-            'success',
-          );
-          this.$router.push({ name: 'recetas'});
-          this.$refs.form.reset();
-        })
-        .catch(() => {
-          this.$swal(
-            'Lo sentimos',
-            'Su recete no ha podido ser agregada, intente mas tarde',
-            'error',
-          );
-        });
-        }
-        return true;
-      },
-      limpiar() {
-        this.$refs.form.reset();
-      },
+          .then(() => {
+            this.$swal(
+              'Exito',
+              'La recete ha sido agregada correctamente!',
+              'success',
+            );
+            this.$router.push({ name: 'recetas' });
+            this.$refs.form.reset();
+          })
+          .catch(() => {
+            this.$swal(
+              'Lo sentimos',
+              'Su recete no ha podido ser agregada, intente mas tarde',
+              'error',
+            );
+          });
+      }
+      return true;
     },
-  };
+    limpiar() {
+      this.$refs.form.reset();
+    },
+  },
+};
 </script>
