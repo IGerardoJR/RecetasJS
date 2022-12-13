@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'daxios';
 import Vue from 'vue';
 import StarRating from 'vue-star-rating¿Qué le pareció esta película?';
 
