@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="login">
-      <a class="btn facebook" href="/login/facebook"> LOGIN CON FACEBOOK </a>
       <a class="btn google" href="/login/google"> LOGIN CON GOOGLE </a>
       <a class="btn linkedin" href="/login/linkedin"> LOGIN CON LINKEDIN </a>
       <a class="btn twitter" href="/login/twitter"> LOGIN CON TWITTER </a>

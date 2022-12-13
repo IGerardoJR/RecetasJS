@@ -6,7 +6,8 @@ import AgregarPelicula from '@/components/AgregarPelicula';
 import Pelicula from '@/components/Pelicula';
 import Registro from '@/components/Registro';
 import Login from '@/components/Login';
-import Principal from '@/components/Principal';
+// Importamos los archivos de nuestro proyecto
+import AgregarReceta from '@/components/AgregarReceta';
 
 Vue.use(Router);
 
@@ -44,9 +45,9 @@ export default new Router({
       component: Login,
     },
     {
-      path: '/principal',
-      name: 'Principal',
-      component: Principal,
+      path: '/recetas/agregar',
+      name: 'AgregarReceta',
+      component: AgregarReceta,
     },
   ],
 });
