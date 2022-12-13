@@ -166,7 +166,7 @@ export default {
             tiempo_coccion: this.tiempo_coccion,
             categoria: this.categoria,
           },
-          url: '/recetas',
+          url: '/recetas/agregar',
           headers: {
             'Content-Type': 'application/json',
           },
