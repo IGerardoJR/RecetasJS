@@ -1,5 +1,5 @@
 // Declaramos los esquemas
-const EsquemaReceta = require('../modelos/recetas');
+const EsquemaReceta = require('../modelos/Receta');
 // Cada receta cuenta con una calificacion
 const Calificacion = require('../modelos/Calificacion');
 const passport = require('passport');
@@ -18,7 +18,7 @@ module.exports.controller = (app) => {
       }
     }
   });
-}
+
 
 // Obtener solo una receta
 app.get('/recetas/:id',(req,res) => {
@@ -29,4 +29,26 @@ app.get('/recetas/:id',(req,res) => {
       res.send(receta);
     }
   }
+});
+
+// Calificar una publicacion de receta
+app.post('/recetas/calificar/:id',(req, res) => {
+  const calif = new Calificacion({
+    receta_id: req.params.id,
+    usuario_id: req.body.usuario_id,
+    calificacion: req.body.calificacion,
+  }); 
 })
+
+// Guardamos la calificacion
+calif.save(function(erro, calificacion) {
+  if(error) { console.log(error); }
+  else {
+    res.send({
+      receta_id: calif.receta_id,
+      usuario_id: calif.usuario_id,
+      calificacion: calif.calificacion,
+    });
+  }
+});
+};

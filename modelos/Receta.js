@@ -12,4 +12,4 @@ const EsquemaReceta = new Esquema({
 });
 
 const Receta = mongoose.model('Receta', EsquemaReceta);
-model.exports = Receta;
+module.exports = Receta;
