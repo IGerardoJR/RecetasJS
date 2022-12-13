@@ -59,12 +59,14 @@
     </v-main>
     <v-footer color="indigo" app>
       <span class="white--text">FullStack1 &copy; 2022</span>
+      <upload-image></upload-image>
     </v-footer>
   </v-app>
 </template>
 
 <script>
 import axios from 'axios';
+import UploadImage from './components/UploadImage';
 
 import './assets/stylesheets/main.css';
 import bus from './bus';
@@ -110,6 +112,9 @@ export default {
         .catch(() => {
         });
     },
+  },
+  components: {
+    UploadImage,
   },
 };
 </script>
