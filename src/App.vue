@@ -29,13 +29,13 @@
         </router-link>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar color="light-green" fixed app>
+    <v-app-bar color="light-green" fixed shaped elevation="14" app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"><v-icon dark>widgets</v-icon></v-app-bar-nav-icon>
       <v-toolbar-title>Inicio</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn text v-bind:to="{ name: 'AgregarPelicula' }" v-if="usuario_actual">
-          Agregar Película
+        <v-btn text v-bind:to="{ name: 'AgregarReceta' }" v-if="!usuario_actual">
+          Agregar Receta
         </v-btn>
         <v-btn id="email_usuario" text v-if="usuario_actual">
           Hola {{ usuario_actual.nombre }}
@@ -58,7 +58,7 @@
         </div>
       </v-container>
     </v-main>
-    <v-footer color="light-green" app>
+    <v-footer color="light-green" shaped elevation="14" app>
       <span class="dark--text">RecetasFullStack 1 &copy; 2022</span>
       </v-footer>
     <!-- <v-footer color="indigo" app>

@@ -26,6 +26,12 @@
       required
       :rules="reglasGenero"
     ></v-text-field>
+    <v-file-input
+    :rules="rules"
+    accept="image/png, image/jpeg, image/bmp"
+    prepend-icon="mdi-camera"
+    label="Imagen Platillo (Opcional)"
+  ></v-file-input>
     <v-btn @click="enviar" :disabled="!validado">
       Enviar
     </v-btn>
@@ -114,4 +120,14 @@ export default {
     },
   },
 };
+</script>
+
+<script>
+  import { mdiCamera } from '@mdi/js'
+
+  export default {
+    data: () => ({
+      svgPath: mdiCamera,
+    }),
+  }
 </script>

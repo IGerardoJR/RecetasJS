@@ -159,7 +159,7 @@
   </v-layout>
 </template> -->
 <template>
-  <v-layout row wrap>
+  <!-- <v-layout row wrap>
     <v-flex xs4 v-for="pelicula in peliculas" :key="pelicula._id">
       <v-card>
         <v-card-title primary-title>
@@ -176,6 +176,39 @@
         <v-card-text>
           {{ pelicula.descripcion }}
         </v-card-text>
+      </v-card>
+    </v-flex> -->
+    <v-layout row wrap>
+    <v-flex xs4>
+      <v-card>
+        <v-img
+  lazy-src="https://library.sportingnews.com/styles/crop_style_16_9_desktop/s3/2021-10/fifa-2022-world-cup-logo-qatar_z5t4wjudq9ty1mh5kqpn38ott.jpg?itok=LTKS3GuAhttps://picsum.photos/id/11/10/6"
+  max-height="300"
+  max-width="360"
+  src="https://library.sportingnews.com/styles/crop_style_16_9_desktop/s3/2021-10/fifa-2022-world-cup-logo-qatar_z5t4wjudq9ty1mh5kqpn38ott.jpg?itok=LTKS3GuA"
+></v-img>
+        <v-card-title primary-title>
+          <div>
+            <div class="headline">El renacido</div>
+            <span class="grey--text">2015 &middot; Drama/Thriller &middot; 2h 36m</span>
+          </div>
+        </v-card-title>
+        <v-card-text>
+          Mientras explora la naturaleza inexplorada en 1823, el hombre de
+          la frontera Hugh Glass (Leonardo DiCaprio) sufre heridas que
+          amenazan su vida debido al brutal ataque de un oso. Cuando un
+          miembro (Tom Hardy) de su equipo de caza mata a su hijo pequeño
+          (Forrest Goodluck) y lo da por muerto, Glass debe utilizar sus
+          habilidades de supervivencia para encontrar el camino de regreso
+          a la civilización. Afligido por el dolor y alimentado por la
+          venganza, el legendario cazador de pieles recorre el terreno
+          nevado para localizar al hombre que lo traicionó.
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn text color="green" rounded outlined>Calificar Pel&iacute;cula</v-btn>
+          <v-spacer></v-spacer>
+        </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>

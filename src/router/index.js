@@ -25,9 +25,9 @@ export default new Router({
       component: Contacto,
     },
     {
-      path: '/peliculas/agregar',
-      name: 'AgregarPelicula',
-      component: AgregarPelicula,
+      path: '/recetas/agregar',
+      name: 'AgregarReceta',
+      component: AgregarReceta,
     },
     {
       path: '/peliculas/:id',
