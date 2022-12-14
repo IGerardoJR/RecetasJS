@@ -1,9 +1,18 @@
 <template>
   <div>
     <div class="login">
-      <a class="btn google" href="/login/google"> LOGIN CON GOOGLE </a>
-      <a class="btn linkedin" href="/login/linkedin"> LOGIN CON LINKEDIN </a>
-      <a class="btn twitter" href="/login/twitter"> LOGIN CON TWITTER </a>
+      <v-btn large fab color="black">
+        <a href="/login/facebook"><v-icon dark large>{{ svgPath }}</v-icon></a>
+      </v-btn>
+      <v-btn large fab color="red">
+        <a href="/login/google"><v-icon color="white" large>{{ svgGoogle }}</v-icon></a>
+      </v-btn>
+      <v-btn large fab color="black">
+        <a href="/login/linkedin"><v-icon color="white" large>{{ svgLinkedIn }}</v-icon></a>
+      </v-btn>
+      <v-btn large fab color="secondary">
+        <a href="/login/twitter"><v-icon color="primary" large>{{ svgTwitter }}</v-icon></a>
+      </v-btn>
     </div>
     <v-form v-model="valido" ref="formulario" lazy-validation>
       <v-text-field
@@ -18,8 +27,8 @@
         type="password"
         required
       ></v-text-field>
-      <v-btn @click="acceder" :disabled="!valido">Acceder</v-btn>
-      <v-btn @click="limpiar">Limpiar</v-btn>
+      <v-btn @click="acceder" :disabled="!valido" rounded large color="green" elevation="10">login</v-btn>
+      <v-btn @click="limpiar" rounded large color="red" elevation="10">Limpiar</v-btn>
     </v-form>
   </div>
 </template>
@@ -67,4 +76,23 @@ export default {
     },
   },
 };
+</script>
+
+<!-- Script Iconos -->
+<script>
+  import { mdiFacebook } from '@mdi/js'
+  import { mdiGoogle } from '@mdi/js'
+  import { mdiLinkedin } from '@mdi/js';
+  import { mdiTwitter } from '@mdi/js';
+  import { mdiLoginVariant } from '@mdi/js';
+
+  export default {
+    data: () => ({
+      svgPath: mdiFacebook,
+      svgGoogle: mdiGoogle,
+      svgLinkedIn: mdiLinkedin,
+      svgTwitter: mdiTwitter,
+      svgLogin: mdiLoginVariant,
+    }),
+  }
 </script>

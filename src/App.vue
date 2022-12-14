@@ -60,10 +60,11 @@
     </v-main>
     <v-footer color="light-green" app>
       <span class="dark--text">RecetasFullStack 1 &copy; 2022</span>
-    <v-footer color="indigo" app>
+      </v-footer>
+    <!-- <v-footer color="indigo" app>
       <span class="white--text">FullStack1 &copy; 2022</span>
       <upload-image></upload-image>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 
