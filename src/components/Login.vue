@@ -27,7 +27,8 @@
         type="password"
         required
       ></v-text-field>
-      <v-btn @click="acceder" :disabled="!valido" rounded large color="green" elevation="10">login</v-btn>
+      <v-btn @click="acceder" :disabled="!valido" rounded large color="green" elevation="10">
+        Login</v-btn>
       <v-btn @click="limpiar" rounded large color="red" elevation="10">Limpiar</v-btn>
     </v-form>
   </div>
@@ -65,6 +66,7 @@ export default {
           this.$swal('¡Felicidades!', '¡Ya esta listo para crear nuevas recetas!', 'success');
           bus.$emit('actualizarUsuario');
           this.$router.push({ name: 'Inicio' });
+          location.reload();
         })
         .catch((error) => {
           const mensaje = error.response.data.mensaje;

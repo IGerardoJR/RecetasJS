@@ -55,7 +55,7 @@ module.exports.controller = (app) => {
   });
 
   // Inicio de sesión
-  app.post('/usuarios/login', passport.authenticate('local', { failureRedirect: '/usuarios/login' }), (req, res) => {
+  app.post('/usuarios/login', passport.authenticate('local', {failureRedirect: '/usuarios/login' }), (req, res) => {
     res.redirect('/');
     // if (req.body.email && req.body.contrasenha) {
     //   const email = req.body.email;
