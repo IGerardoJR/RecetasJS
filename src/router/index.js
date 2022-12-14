@@ -8,7 +8,7 @@ import Registro from '@/components/Registro';
 import Login from '@/components/Login';
 // Importamos los archivos de nuestro proyecto
 import AgregarReceta from '@/components/AgregarReceta';
-
+import Receta from '@/components/Receta';
 Vue.use(Router);
 
 export default new Router({
@@ -29,6 +29,11 @@ export default new Router({
       name: 'AgregarReceta',
       component: AgregarReceta,
     },
+   {
+      path: '/recetas/:id',
+      name: 'Receta',
+      component: Receta,
+   },
     {
       path: '/peliculas/:id',
       name: 'Pelicula',
@@ -43,11 +48,6 @@ export default new Router({
       path: '/usuarios/login',
       name: 'Login',
       component: Login,
-    },
-    {
-      path: '/recetas/agregar',
-      name: 'AgregarReceta',
-      component: AgregarReceta,
     },
   ],
 });

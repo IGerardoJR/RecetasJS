@@ -159,13 +159,8 @@
   </v-layout>
 </template> -->
 <template>
-<<<<<<< HEAD
   <v-layout row wrap>
     <v-flex xs4 v-for="receta in recetas" :key="receta._id">
-=======
-  <!-- <v-layout row wrap>
-    <v-flex xs4 v-for="pelicula in peliculas" :key="pelicula._id">
->>>>>>> 4330ecbf96418bfd520f8488b8b9ceabf558719e
       <v-card>
         <v-card-title primary-title>
           <div>
@@ -216,6 +211,7 @@
         </v-card-actions>
       </v-card>
     </v-flex>
+  </v-layout>
   </v-layout>
 </template>
 <script>
