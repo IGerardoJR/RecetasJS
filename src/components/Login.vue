@@ -52,7 +52,8 @@ export default {
       })
         .then((respuesta) => {
           window.localStorage.setItem('auth', respuesta.data.token);
-          this.$swal('¡Felicidades!', '¡Usted está listo para iniciar con todo!', 'success');
+          window.localStorage.setItem('email', this.email);
+          this.$swal('¡Felicidades!', '¡Ya esta listo para crear nuevas recetas!', 'success');
           bus.$emit('actualizarUsuario');
           this.$router.push({ name: 'Inicio' });
         })

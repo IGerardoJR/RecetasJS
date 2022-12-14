@@ -7,7 +7,14 @@
   required></v-text-field>
    <v-btn @click="registrar" :disabled="!valido">Registrar</v-btn>
   <v-btn @click="limpiar">Limpiar</v-btn>
+  <br>
+  <br>
+  <br>
+  <v-text>
+    <h2> O </h2>
+  </v-text>
 </v-form>
+
 </template>
 
 <script>

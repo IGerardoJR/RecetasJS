@@ -8,7 +8,7 @@ const passport = require('passport');
 module.exports.controller = (app) => {
   // Obtenemos todas las recetas
   app.get('/recetas', function(req, res) {
-    EsquemaReceta.find({}, 'titulo descripcion nivel_dificultad tiempo_preparacion tiempo_coccion categoria ingredientes'),
+    EsquemaReceta.find({}, 'titulo descripcion nivel_dificultad tiempo_preparacion tiempo_coccion categoria ingredientes',
     (error, recetas) => {
       if (error) { console.error(error); }
       else {
@@ -16,19 +16,19 @@ module.exports.controller = (app) => {
           recetas,
         });
       }
-    }
+    });
   });
 
 
 // Obtener solo una receta
 app.get('/recetas/:id',(req,res) => {
-  EsquemaReceta.findById(req.params.id, 'titulo descripcion nivel_dificultad tiempo_preparacion tiempo_coccion categoria ingredientes'),
+  EsquemaReceta.findById(req.params.id, 'titulo descripcion nivel_dificultad tiempo_preparacion tiempo_coccion categoria ingredientes',
   (error, receta) => {
     if(error) { console.error(error); }
     else {
       res.send(receta);
     }
-  }
+  })
 });
 
 // Calificar una publicacion de receta
@@ -75,11 +75,13 @@ app.post('/recetas',(req,res) => {
     ingredientes: req.body.ingredientes,
   });
   // Guardamos la receta
-  console.log(nuevaReceta);
-  nuevaReceta.save((error, receta) => {
-    if(error) { console.error(error); }
+ nuevaReceta.save((error, receta) => {
+  if(error) {
+    res.send(error);
+  }
+  else{
     res.send(receta);
-  });
-});
-
+  }
+ });
+  })
 };

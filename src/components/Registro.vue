@@ -20,6 +20,7 @@
     <v-text-field
       label="Confirmar contraseña:"
       v-model="confirmar_contrasenha"
+      required
       type="password"
     ></v-text-field>
     <v-btn

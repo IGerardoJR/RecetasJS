@@ -12,7 +12,7 @@
           Calificar {{ receta.titulo }}
           </v-btn>
         <v-card-text>
-        {{ receta.description }}
+        {{ receta.descripcion }}
       </v-card-text>
       </v-card>
     </v-flex>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import axios from 'daxios';
+import axios from 'axios';
 import Vue from 'vue';
 import StarRating from 'vue-star-rating¿Qué le pareció esta película?';
 

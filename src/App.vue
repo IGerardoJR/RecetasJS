@@ -30,7 +30,8 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar color="light-green" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"><v-icon dark>widgets</v-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer">
+        <v-icon dark>widgets</v-icon></v-app-bar-nav-icon>
       <v-toolbar-title>Inicio</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -58,12 +59,6 @@
         </div>
       </v-container>
     </v-main>
-    <v-footer color="light-green" app>
-      <span class="dark--text">RecetasFullStack 1 &copy; 2022</span>
-    <v-footer color="indigo" app>
-      <span class="white--text">FullStack1 &copy; 2022</span>
-      <upload-image></upload-image>
-    </v-footer>
   </v-app>
 </template>
 
