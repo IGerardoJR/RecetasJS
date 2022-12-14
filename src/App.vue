@@ -5,7 +5,6 @@
       v-model="drawer"
       app
     >
-
       <v-list dense>
         <router-link v-bind:to="{ name: 'Inicio' }"
           class="side_bar_link"
@@ -41,10 +40,10 @@
         <v-btn id="email_usuario" text v-if="usuario_actual">
           Hola {{ usuario_actual.nombre }}
         </v-btn>
-        <v-btn text v-bind:to="{ name: 'Registro' }" v-if="!usuario_actual" id="boton_registro">
+        <v-btn text v-bind:to="{ name: 'Registro' }" v-if="usuario_actual" id="boton_registro">
           Registro
         </v-btn>
-        <v-btn id="boton_login" text v-bind:to="{ name: 'Login' }" v-if="!usuario_actual">
+        <v-btn id="boton_login" text v-bind:to="{ name: 'Login' }" v-if="usuario_actual">
           Login
         </v-btn>
         <v-btn text id="boton_logout" v-if="usuario_actual" @click="logout">
